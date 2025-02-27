@@ -24,6 +24,10 @@ public class Department {
     //Copy constructor
 
         public Department(Department d){
+            if (!isValidState(d)) {
+                System.out.println("Error: Department does not exist or is invalid!");
+                System.exit(1);
+            }
             this.chair = d.chair;
     
             this.faculty = new Professor[d.faculty.length];
@@ -39,6 +43,12 @@ public class Department {
     
     }
 
+    private boolean isValidState(Department d) {
+        return (d != null) &&
+            (d.chair != null && d.chair != "") &&
+            (d.faculty != null && d.faculty.length > 0) &&
+            (d.courses != null && d.courses.length > 0);
+    }
 
     //Setters
 
@@ -68,15 +78,15 @@ public class Department {
     public Professor[] getFaculty(){
         Professor[] tempFaculty = new Professor[this.faculty.length];
         for(int i =0; i< this.faculty.length ; i ++){
-            tempFaculty = new Professor(this.faculty[i]);
+            tempFaculty[i] = new Professor(this.faculty[i]);
         }
         return tempFaculty;
     }
 
     public Course[] getCourses(){
         Course[] tempCourses = new Course[this.courses.length];
-        for(int i =0; i< this.courses.length ; i ++){
-            tempCourses = new Course(this.courses[i]);
+        for(int i = 0; i < this.courses.length; i++){
+            tempCourses[i] = new Course(this.courses[i]);
         }
         return tempCourses;
     }
@@ -87,6 +97,7 @@ public class Department {
     public String toString(){
 
        String output = "";
+       output += super.toString();
        output += "The chair of this department is: " + this.chair + "\n";
        output += "The following is a list of courses under this deprtment";
        for(int i = 0; i< this.courses.length; i++){
