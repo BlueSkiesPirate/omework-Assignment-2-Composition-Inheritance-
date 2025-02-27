@@ -1,4 +1,4 @@
-public class Student extends Person{
+public class Student extends Person {
     private String stu_id;
     private double gpa;
 
@@ -14,8 +14,18 @@ public class Student extends Person{
     //Copy Constructor
     public Student(Student s) {
         super(s.getName(), s.getAge(), s.getSsn(), s.getAlive());
+        if (!isValidState(s)) {
+            System.out.println("Error: Student does not exist or is invalid!");
+            System.exit(1);
+        }
         this.stu_id = s.stu_id;
         this.gpa = s.gpa;
+    }
+
+    private boolean isValidState(Student s) {
+        return (s != null) &&
+            (s.stu_id != null && s.stu_id != "") &&
+            (s.gpa >= 0.0 && s.gpa <= 4.0);
     }
 
     //get methods

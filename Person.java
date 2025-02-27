@@ -59,7 +59,7 @@ public class Person {
         s += "Name: " + this.name + "\n";
         s += "Age: " + this.age + "\n";
         s += "SSN: " + this.ssn + "\n";
-        s += "Alive: " + this.alive + "\n";
+        s += "Vital Status: " + (this.alive ? "Alive" : "Deceased") + "\n";
 
         return s;
     }
