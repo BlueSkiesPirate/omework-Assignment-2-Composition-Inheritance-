@@ -18,9 +18,21 @@ public class Teacher extends Person {
     //Copy Constructor
     public Teacher(Teacher t) {
         super(t.getName(), t.getAge(), t.getSsn(), t.getAlive());
+        
+        if (!isValidState(t)) {
+            System.out.println("Error: Teacher does not exist or is invalid!");
+            System.exit(1);
+        }
         this.ID = t.ID;
         this.monthly_salary = t.monthly_salary;
         this.num_yr_prof = t.num_yr_prof;
+    }
+
+    private boolean isValidState(Teacher other) {
+        return (other != null) &&
+            (other.ID != null && other.ID != "") &&
+            (other.monthly_salary >= 0) &&
+            (other.num_yr_prof >= 0);
     }
 
     //get methods
@@ -36,7 +48,7 @@ public class Teacher extends Person {
 
     //set methods
     public void setId(String id) {
-        this.ID = ID;
+        this.ID = id;
     }
     public void setMonthly_salary(int monthly_salary) {
         this.monthly_salary = monthly_salary;
