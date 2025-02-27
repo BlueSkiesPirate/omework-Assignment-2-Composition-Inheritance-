@@ -7,7 +7,7 @@ public class Teacher extends Person {
     public Teacher(){}
 
     //Fully Loaded constructor
-    public Teacher(String name, int age, String ssn, boolean alive, String ID, int salary, int _yr_prof){
+    public Teacher(String name, int age, String ssn, boolean alive, String ID, int salary, int num_yr_prof){
         //super keyword 
         super(name, age, ssn, alive);
         this.ID = ID;
