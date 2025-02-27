@@ -37,7 +37,7 @@ public class Student extends Person{
     public String toString() {
         String s = "";
         s += "Student Information: " + "\n";
-        //Super toString to get information/toString of the parent class
+        //Super toString
         s += super.toString();
         s += "Id: " + this.stu_id + "\n";
         s += "GPA : " + this.gpa + "\n";
