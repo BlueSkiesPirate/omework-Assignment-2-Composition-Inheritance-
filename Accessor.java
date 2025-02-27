@@ -16,19 +16,6 @@ public class Accessor {
     true);
 
     Professor p2 = new Professor(
-    "Rick", 
-    50, 
-    "123-47-1111", 
-    true,  
-    "583022", 
-    100000, 
-    32,
-    "Chemisrty",
-    "Cellular decoding",
-    "7",
-    true
-    );
-    Professor p3 = new Professor(
         "Jimmy", 
         30, 
         "111-11-1111", 
@@ -42,10 +29,38 @@ public class Accessor {
         false
     );
 
-    College_student s1 = new College_student("Izzy" , 19, "422-74-5829", true, "782945", 3.9 );
-    College_student s2 = new College_student("Bobby" , 20, "333-33-3333", true, "124829", 3.8 );
-    College_student s3 = new College_student("Mike" , 20, "748-83-7247", true, "81983", 2.0 );
-    College_student s4 = new College_student("Alex" , 21, "425-86-8392", true, "839822", 3.5 );
+    Professor p3 = new Professor(
+    "Rick", 
+    50, 
+    "123-47-1111", 
+    true,  
+    "583022", 
+    100000, 
+    32,
+    "Chemisrty",
+    "Cellular decoding",
+    "7",
+    true
+    );
+
+    Professor p4 = new Professor(
+        "Sarah", 
+        45, 
+        "222-22-2222", 
+        true,  
+        "987654", 
+        95000, 
+        20,
+        "Physics",
+        "Quantum Mechanics",
+        "15",
+        true
+    );
+
+    College_student s1 = new College_student("Izzy" , 19, "422-74-5829", true, "782945", 3.9, "Computer Science", "A");
+    College_student s2 = new College_student("Bobby" , 20, "333-33-3333", true, "124829", 3.8, "Computer Engineering", "A-");
+    College_student s3 = new College_student("Mike" , 20, "748-83-7247", true, "81983", 2.0, "Physics", "C");
+    College_student s4 = new College_student("Alex" , 21, "425-86-8392", true, "839822", 3.5, "Bioengineering", "B+");
 
   
 
@@ -58,24 +73,32 @@ public class Accessor {
     roster2[0] = s3;
     roster2[1] = s4;
 
-    Professor[] facultyList1 = new Professor[3];
+    Professor[] facultyList1 = new Professor[2];
+    Professor[] facultyList2 = new Professor[2];
 
-    facultyList1[0] = p2;
-    facultyList1[0] = p3;
+    facultyList1[0] = p1;
+    facultyList1[1] = p2;
 
+    facultyList2[0] = p3;
+    facultyList2[1] = p4;
 
-    Course c1 = new Course(p2, "Chem 1", roster1);
-    Course c2 = new Course(p1, "Programming 1", roster2);
-
-    Course[] CourseList = new Course[3];
-
-    CourseList[0] = c1;
-    CourseList[1] = c2;
+    Course c1 = new Course(p1, "Programming 1", roster2);
+    Course c2 = new Course(p2, "Calculus", roster1);
+    Course c3 = new Course(p3, "Chem 1", roster1);
+    Course c4 = new Course(p4, "Physics 1", roster2);
     
 
-    Department d1 = new Department();
-    Department d2 = new Department("Quandale Dingle", facultyList1, CourseList );
+    Course[] courseList1 = new Course[2];
+    Course[] courseList2 = new Course[2];
 
+    courseList1[0] = c1;
+    courseList2[1] = c2;
+
+    courseList2[0] = c3;
+    courseList2[1] = c4;
+
+    Department d1 = new Department(p1, facultyList2, courseList1);
+    Department d2 = new Department(p2, facultyList1, courseList2);
  }  
 }
 

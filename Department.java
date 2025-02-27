@@ -1,12 +1,12 @@
 public class Department {
-    private String chair;
+    private Professor chair;
     private Professor[] faculty;
     private Course[] courses;
 
 
     //Fully loaded constructor
-    public Department(String c, Professor[] faculty, Course[] courses){
-        this.chair = c;
+    public Department(Professor chair, Professor[] faculty, Course[] courses){
+        this.chair = new Professor(chair);
 
         this.faculty = new Professor[faculty.length];
         this.courses = new Course[courses.length];
@@ -28,7 +28,7 @@ public class Department {
                 System.out.println("Error: Department does not exist or is invalid!");
                 System.exit(1);
             }
-            this.chair = d.chair;
+            this.chair = new Professor(d.chair);
     
             this.faculty = new Professor[d.faculty.length];
             this.courses = new Course[d.courses.length];
@@ -45,20 +45,20 @@ public class Department {
 
     private boolean isValidState(Department d) {
         return (d != null) &&
-            (d.chair != null && d.chair != "") &&
+            (d.chair != null) &&
             (d.faculty != null && d.faculty.length > 0) &&
             (d.courses != null && d.courses.length > 0);
     }
 
     //Setters
 
-    public void setChair(String chair){
-        this.chair = chair;
+    public void setChair(Professor chair){
+        this.chair = new Professor(chair);
     }
 
     public void setFaculty(Professor[] faculty){
         this.faculty = new Professor[faculty.length];
-        for(int i =0; i< faculty.length ; i ++){
+        for(int i = 0; i < faculty.length ; i++){
             this.faculty[i] = new Professor(faculty[i]);
         }
     }
@@ -71,8 +71,9 @@ public class Department {
     }
 
     //Getters
-    public String getChair(){
-        return this.chair;
+    public Professor getChair(){
+        Professor tempChair = new Professor(this.chair);
+        return tempChair;
     }
 
     public Professor[] getFaculty(){
