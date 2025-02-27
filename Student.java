@@ -4,7 +4,7 @@ public class Student extends Person{
 
     //Fully Loaded constructor
     public Student(String name, int age, String ssn, boolean alive, String stu_id, double gpa){
-        //super keyword (Purpose is to retrieve methods from parent class)
+        //super keyword 
         super(name, age, ssn, alive);
 
         this.stu_id = stu_id;
