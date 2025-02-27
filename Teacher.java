@@ -49,7 +49,7 @@ public class Teacher extends Person {
     public String toString() {
         String s = "";
         s += "Teacher Information: " + "\n";
-        //Super toString to get toString from the parent class
+        //Super toString 
         s += super.toString();
         s += "Id: " + this.ID + "\n";
         s += "Salary: " + this.monthly_salary + "\n";
