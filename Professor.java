@@ -29,11 +29,12 @@ public class Professor extends Teacher {
         this.tenured = tenured;
     }
 
-    public Professor(Professor other) {
-        this.speciality = other.speciality;
-        this.research_area = other.research_area;
-        this.rank = other.rank;
-        this.tenured = other.tenured;
+    public Professor(Professor p) {
+        super(p.getName(),p.getAge(),p.getSsn(), p.getAlive(),p.getId(), p.getMonthly_salary(),p.getNum_yr_prof());
+        this.speciality = p.speciality;
+        this.research_area = p.research_area;
+        this.rank = p.rank;
+        this.tenured = p.tenured;
     }
 
     public String getSpeciality() {
@@ -70,7 +71,7 @@ public class Professor extends Teacher {
 
     public String toString() {
         String s = "";
-
+        s+= "Name: " + this.getName() + "\n";
         s+= "Speciality: " + this.speciality + "\n";
         s+= "Rank: " + this.rank + "\n";
         s+= "Research Area: : " + this.research_area + "\n";

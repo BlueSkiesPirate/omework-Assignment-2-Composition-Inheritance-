@@ -1,7 +1,7 @@
 public class Accessor {
  public static void main(String[] args) {
 
-
+//------------------This is where we create the professor objects
     Professor p1 = new Professor(  
     "Donald", 
     75, 
@@ -56,13 +56,48 @@ public class Accessor {
         "15",
         true
     );
+//----------------------This is where we create the student objects
+    College_student s1 = new College_student(
+        "Izzy" , 
+        19, 
+        "422-74-5829", 
+        true, 
+        "782945", 
+        3.9, 
+        "Computer Science", 
+        "A");
 
-    College_student s1 = new College_student("Izzy" , 19, "422-74-5829", true, "782945", 3.9, "Computer Science", "A");
-    College_student s2 = new College_student("Bobby" , 20, "333-33-3333", true, "124829", 3.8, "Computer Engineering", "A-");
-    College_student s3 = new College_student("Mike" , 20, "748-83-7247", true, "81983", 2.0, "Physics", "C");
-    College_student s4 = new College_student("Alex" , 21, "425-86-8392", true, "839822", 3.5, "Bioengineering", "B+");
+    College_student s2 = new College_student(
+        "Bobby" , 
+        20, 
+        "333-33-3333", 
+        true, 
+        "124829", 
+        3.8, 
+        "Computer Engineering", 
+        "A-");
 
-  
+    College_student s3 = new College_student(
+        "Mike" , 
+        20, 
+        "748-83-7247", 
+        true, 
+        "81983", 
+        2.0, 
+        "Physics", 
+        "C");
+
+    College_student s4 = new College_student(
+        "Alex" , 
+        21, 
+        "425-86-8392", 
+        true, 
+        "839822", 
+        3.5, 
+        "Bioengineering", 
+        "B+");
+
+  //This is where we create the rosters and lists of faculty
 
     College_student[] roster1 = new College_student[2];
     College_student[] roster2 = new College_student[2];
@@ -82,6 +117,9 @@ public class Accessor {
     facultyList2[0] = p3;
     facultyList2[1] = p4;
 
+
+    //This is where we create the courses
+
     Course c1 = new Course(p1, "Programming 1", roster2);
     Course c2 = new Course(p2, "Calculus", roster1);
     Course c3 = new Course(p3, "Chem 1", roster1);
@@ -98,7 +136,13 @@ public class Accessor {
     courseList2[1] = c4;
 
     Department d1 = new Department(p1, facultyList2, courseList1);
-    Department d2 = new Department(p2, facultyList1, courseList2);
+    // Department d2 = new Department(p2, facultyList1, courseList2);
+
+    // System.out.print(p1 + "\n\n");
+    // System.out.print(s1 + "\n\n");
+    // System.out.print(c1 + "\n\n") ;
+    System.out.print(d1);
+    // System.out.print(d1 + "\n\n");
  }  
 }
 

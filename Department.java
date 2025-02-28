@@ -44,10 +44,10 @@ public class Department {
     }
 
     private boolean isValidState(Department d) {
-        return (d != null) &&
-            (d.chair != null) &&
-            (d.faculty != null && d.faculty.length > 0) &&
-            (d.courses != null && d.courses.length > 0);
+        return (d != null) 
+        && (d.chair != null) 
+        && (d.faculty != null && d.faculty.length > 0) 
+        && (d.courses != null && d.courses.length > 0);
     }
 
     //Setters
@@ -101,7 +101,7 @@ public class Department {
        output += super.toString();
        output += "The chair of this department is: " + this.chair + "\n";
        output += "The following is a list of courses under this deprtment";
-       for(int i = 0; i< this.courses.length; i++){
+       for(int i = 0; i< courses.length; i++){
         output += i + " " + courses[i].toString() + "\n";
        } 
        output += "These are some of the professors in this department";
