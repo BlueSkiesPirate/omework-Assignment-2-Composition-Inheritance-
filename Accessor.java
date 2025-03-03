@@ -130,7 +130,7 @@ public class Accessor {
     Course[] courseList2 = new Course[2];
 
     courseList1[0] = c1;
-    courseList2[1] = c2;
+    courseList1[1] = c2;
 
     courseList2[0] = c3;
     courseList2[1] = c4;

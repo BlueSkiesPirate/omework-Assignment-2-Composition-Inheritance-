@@ -15,10 +15,10 @@ public class Course {
 
     // Copy Constructor
     public Course(Course other) {
-        // if (!isValidState(other)) {
-        //     System.out.println("Error: Course does not exist or is invalid!");
-        //     System.exit(1);
-        // }
+        if (!isValidState(other)) {
+            System.out.println("Error: Course does not exist or is invalid!");
+            System.exit(1);
+        }
         this.instructor = new Professor(other.instructor);
         this.course_name = other.course_name;
         this.students = new College_student[other.students.length];
