@@ -74,7 +74,7 @@ public class Professor extends Teacher {
         s+= "Name: " + this.getName() + "\n";
         s+= "Speciality: " + this.speciality + "\n";
         s+= "Rank: " + this.rank + "\n";
-        s+= "Research Area: : " + this.research_area + "\n";
+        s+= "Research Area: " + this.research_area + "\n";
         s+= "Tenured: " + this.tenured + "\n";
 
         return s;

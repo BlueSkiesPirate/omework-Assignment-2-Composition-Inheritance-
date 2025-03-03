@@ -2,6 +2,7 @@ public class Course {
     private Professor instructor;
     private String course_name;
     private College_student[] students;
+    private int numStudents;
 
     // Fully loaded constructor
     public Course(Professor instructor, String course_name, College_student[] students) {
@@ -11,6 +12,7 @@ public class Course {
         for (int i = 0; i < students.length; i++) {
             this.students[i] = students[i];
         }
+        this.numStudents = this.students.length;
     }
 
     // Copy Constructor
@@ -25,6 +27,7 @@ public class Course {
         for (int i = 0; i < other.students.length; i++) {
             this.students[i] = other.students[i];
         }
+        this.numStudents = this.students.length;
     }
 
     private boolean isValidState(Course c) {
@@ -74,10 +77,13 @@ public class Course {
         String courseInfo = "Course Details: " +  
         "\nInstructor: " + instructor.getName() +  "\nCourse Name: " + this.course_name;
         
-        courseInfo += "\nStudent Roster: ";
+        courseInfo += "\n\nStudent Roster: ";
+        courseInfo += "\n----------------\n";
         for (Student student : students) {
-            courseInfo += "\n\t" + student.getName();
+            courseInfo +=  student.toString() + "\n";
         }
+        courseInfo += "Total Students: " + this.numStudents;
+        courseInfo += "\n----------------\n";
 
         return courseInfo;
     }

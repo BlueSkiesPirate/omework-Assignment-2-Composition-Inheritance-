@@ -1,7 +1,9 @@
 public class Department {
     private Professor chair;
     private Professor[] faculty;
+    private int numFaculty;
     private Course[] courses;
+    private int numCourses;
 
 
     //Fully loaded constructor
@@ -18,6 +20,9 @@ public class Department {
         for(int j=0 ; j< courses.length; j++){
             this.courses[j] = new Course(courses[j]);
         }
+
+        this.numFaculty = this.faculty.length;
+        this.numCourses = this.courses.length;
 
     }
 
@@ -84,6 +89,10 @@ public class Department {
         return tempFaculty;
     }
 
+    public int getNumFaculty() {
+        return numFaculty;
+    }
+
     public Course[] getCourses(){
         Course[] tempCourses = new Course[this.courses.length];
         for(int i = 0; i < this.courses.length; i++){
@@ -98,16 +107,23 @@ public class Department {
     public String toString(){
 
        String output = "";
-       output += super.toString();
-       output += "The chair of this department is: " + this.chair + "\n";
-       output += "The following is a list of courses under this deprtment";
+       output += "\n**********************************************************************\n";
+       output += "The chair of this department is: \n" + this.chair.toString() + "\n";
+       output += "The following is a list of courses under this department: \n";
+       output += "---------------------------------------------------------\n";
        for(int i = 0; i< courses.length; i++){
-        output += i + " " + courses[i].toString() + "\n";
+        output += i+1 + " " + courses[i].toString() + "\n";
        } 
-       output += "These are some of the professors in this department";
+       output += "Total courses: " + numCourses;
+       output += "\n---------------------------------------------------------\n";
+       output += "\nThese are some of the professors in this department: \n";
+       output += "----------------------------------------------------\n";
        for(int i = 0; i< this.faculty.length; i++){
-        output += i + " " + faculty[i].toString() + "\n";
+        output += i+1 + " " + faculty[i].toString() + "\n";
        } 
+       output += "Total faculty members: " + this.numFaculty;
+       output += "\n----------------------------------------------------\n";
+       output += "**********************************************************************\n";
 
        return output;
     }
