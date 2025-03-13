@@ -1,3 +1,11 @@
+/*
+Group members: Kai Xing Sze, Johny Nolasco, Sebastian Reyna
+Course: Computer Programming 2/CSCI180
+Professor: Dr.Li
+Date: 3/13/25
+Assignment nameHomework Assignment #2: Composition & Inheritance (*GROUP WORK*)
+ */
+
 public class Accessor {
  public static void main(String[] args) {
 
